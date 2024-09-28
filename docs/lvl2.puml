@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Main
+class GuessANumberGame
+interface UI
+class LocalUI
+
+UI <|-- LocalUI
+
+
+class GuessANumberGame {
+    -int numberToGuess
+    -int userGuess
+    -int numberOfGuesses
+    -UI ui
+    -Random rand
+    +GuessANumberGame()
+    +void startGame()
+    -void gameLoop()
+    - String giveFeedback(int, int)
+    -String endGameMsg(int, int)
+}
+interface UI {
+    +int getUserInput()
+    +void sendMsg(String)
+}
+class LocalUI {
+    - Scanner scanner
+    +int getUserInput()
+    +void sendMsg()
+}
+class Main {
++static void main(String[] args)
+}
+
+
+@enduml

@@ -29,7 +29,7 @@ public class GuessANumberGame
             ui.sendMsg( giveFeedback(userGuess,numberToGuess) );
         }
         while (numberToGuess != userGuess);
-        ui.sendMsg( endGameMsg(numberOfGuesses, numberToGuess) );
+        ui.sendMsg( endGameMsg(numberOfGuesses) );
     }
 
     private String giveFeedback(int numberToGuess, int userGuess)

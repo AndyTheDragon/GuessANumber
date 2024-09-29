@@ -43,7 +43,7 @@ public class GuessANumberGame
         return "You guessed the number " + numberToGuess + " correctly!";
     }
 
-    private String endGameMsg(int numberOfGuesses, int numberToGuess) {
+    private String endGameMsg(int numberOfGuesses) {
         return "You used " + numberOfGuesses + " guesses!";
     }
 }

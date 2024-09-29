@@ -40,11 +40,27 @@ class LocalUITest
     }
 
     @Test
-    void getUserInput_invalidInput()
+    void getUserInput_invalidFollowedByValidInput()
     {
         //Arrange
         int expected = 42;
         String input = "a\n4.2\nb\n42\n";
+        ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
+        LocalUI localUI = new LocalUI(in);
+
+        //Act
+        int result = localUI.getUserInput();
+
+        //Assert
+        assertEquals(expected, result);
+
+    }
+    @Test
+    void getUserInput_onlyInvalidInput()
+    {
+        //Arrange
+        int expected = 0;
+        String input = "a\n4.2\nb\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         LocalUI localUI = new LocalUI(in);
 

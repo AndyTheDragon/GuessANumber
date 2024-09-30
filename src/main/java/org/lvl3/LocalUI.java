@@ -19,17 +19,15 @@ public class LocalUI implements UI
     @Override
     public int getUserInput()
     {
-        while (scanner.hasNext()) {
-            String input = scanner.nextLine();
-            try {
-                int output = Integer.parseInt(input);
-                return output;
-            }
-            catch (NumberFormatException e) {
-                sendMsg("Please input an integer");
-            }
+        String input = scanner.nextLine();
+        try {
+            return Integer.parseInt(input);
         }
-        return 0;
+        catch (NumberFormatException e) {
+            sendMsg("Please input an integer");
+            return getUserInput();
+        }
+
     }
 
     @Override

@@ -12,8 +12,7 @@ public class LocalUI implements UI
         while (scanner.hasNext()) {
             String input = scanner.nextLine();
             try {
-                int output = Integer.parseInt(input);
-                return output;
+                return Integer.parseInt(input);
             }
             catch (NumberFormatException e) {
                 sendMsg("Please input an integer");

@@ -5,10 +5,9 @@ import java.util.Random;
 public class GuessANumberGame
 {
     private int numberToGuess;
-    private int userGuess;
     private int numberOfGuesses;
-    private UI ui;
-    private Random rand;
+    private final UI ui;
+    private final Random rand;
 
     GuessANumberGame() {
         this.numberOfGuesses = 0;
@@ -22,6 +21,7 @@ public class GuessANumberGame
     }
 
     private void gameLoop() {
+        int userGuess;
         do {
             ui.sendMsg( "Please input an integer between 1 and 100" );
             userGuess = ui.getUserInput();

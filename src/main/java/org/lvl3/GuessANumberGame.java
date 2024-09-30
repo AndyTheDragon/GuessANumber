@@ -4,15 +4,13 @@ import java.util.Random;
 
 public class GuessANumberGame
 {
-    private int numberToGuess;
-    private int userGuess;
+    private final int numberToGuess;
     private int numberOfGuesses;
-    private UI ui;
-    private Random rand;
+    private final UI ui;
 
     GuessANumberGame() {
         this.numberOfGuesses = 0;
-        this.rand = new Random();
+        Random rand = new Random();
         this.numberToGuess = rand.nextInt(100) + 1;
         this.ui = new LocalUI();
     }
@@ -22,6 +20,7 @@ public class GuessANumberGame
     }
 
     private void gameLoop() {
+        int userGuess;
         do {
             ui.sendMsg( "Please input an integer between 1 and 100" );
             userGuess = ui.getUserInput();

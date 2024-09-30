@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LocalUI implements UI
 {
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     @Override
     public int getUserInput()
